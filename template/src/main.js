@@ -8,11 +8,37 @@ import App from './App'
 import router from './router'
 {{/router}}
 
+import api from './api'
+
+// PC版本使用element
+{{#if_eq projectType "PC"}}
+import ElementUI from 'element-ui'
+{{/if_eq}}
+
+import store from './store'
+
 Vue.config.productionTip = false
+
+// 移动端设置 rem
+{{#if_eq projectType "mobile"}}
+document.documentElement.style.fontSize = '14px';
+if ('addEventListener' in document) {
+    document.addEventListener("touchstart", function() {},false);
+}
+{{/if_eq}}
+
+
+Vue.prototype.$model = api;
+
+router.beforeEach((to, from, next) => {
+  next();
+})
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   {{#router}}
   router,
   {{/router}}

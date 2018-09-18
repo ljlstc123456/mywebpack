@@ -29,10 +29,22 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  {{#if_eq projectType "mobile"}}
+  var px2remLoader = {
+    loader: 'px2rem-loader',
+    options: {
+      remUnit: 28
+    }
+  };
+  {{/if_eq}}
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
+    {{#if_eq projectType "mobile"}}
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader,px2remLoader] : [cssLoader,px2remLoader]
+    {{/if_eq}}
+    {{#if_eq projectType "PC"}}
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
-
+    {{/if_eq}}
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -47,7 +59,8 @@ exports.cssLoaders = function (options) {
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        // publicPath:"../../",
       })
     } else {
       return ['vue-style-loader'].concat(loaders)

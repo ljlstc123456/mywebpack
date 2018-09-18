@@ -63,7 +63,7 @@ module.exports = {
         },
         {
           name:
-            'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
+          'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
           value: 'runtime',
           short: 'runtime',
         },
@@ -77,7 +77,7 @@ module.exports = {
     lint: {
       when: 'isNotTest',
       type: 'confirm',
-      message: 'Use ESLint to lint your code?',
+      message: 'Use ESLint to lint your code,?',
     },
     lintConfig: {
       when: 'isNotTest && lint',
@@ -100,38 +100,6 @@ module.exports = {
           short: 'none',
         },
       ],
-    },
-    unit: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Set up unit tests',
-    },
-    runner: {
-      when: 'isNotTest && unit',
-      type: 'list',
-      message: 'Pick a test runner',
-      choices: [
-        {
-          name: 'Jest',
-          value: 'jest',
-          short: 'jest',
-        },
-        {
-          name: 'Karma and Mocha',
-          value: 'karma',
-          short: 'karma',
-        },
-        {
-          name: 'none (configure it yourself)',
-          value: 'noTest',
-          short: 'noTest',
-        },
-      ],
-    },
-    e2e: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Setup e2e tests with Nightwatch?',
     },
     autoInstall: {
       when: 'isNotTest',
@@ -157,19 +125,37 @@ module.exports = {
       ],
     },
   },
+  projectType: {
+      when: 'isNotTest',
+      type: 'list',
+      message:
+        'choices project type',
+      choices: [
+        {
+          name: 'Yes, use PC',
+          value: 'PC',
+          short: 'PC',
+        },
+        {
+          name: 'Yes, use mobile',
+          value: 'mobile',
+          short: 'mobile',
+        }
+      ],
+    },
+  },
+  "vuex":{
+    "type": "confirm",
+    "message": "Install vuex?"
+  },
   filters: {
     '.eslintrc.js': 'lint',
     '.eslintignore': 'lint',
-    'config/test.env.js': 'unit || e2e',
-    'build/webpack.test.conf.js': "unit && runner === 'karma'",
-    'test/unit/**/*': 'unit',
-    'test/unit/index.js': "unit && runner === 'karma'",
-    'test/unit/jest.conf.js': "unit && runner === 'jest'",
-    'test/unit/karma.conf.js': "unit && runner === 'karma'",
-    'test/unit/specs/index.js': "unit && runner === 'karma'",
-    'test/unit/setup.js': "unit && runner === 'jest'",
-    'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/store/**/*': 'vuex',
+    'src/pages/index.vue': "projectType == 'mobile'",
+    'src/pages/layout.vue': "projectType == 'PC'",
+    'src/pages/login.vue': "projectType == 'PC'"
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

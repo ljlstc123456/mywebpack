@@ -1,22 +1,15 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <!-- <ChildComponents></ChildComponents> -->
   </div>
 </template>
 <script>
-//子组件要提前引入，才可使用
-//import ChildComponents from './ChildComponents.vue'
-//也可引入一些公共Js脚本或类库
-//import Cookie from '../lib/cookie.js'
-//import { mapGetters,mapMutations } from 'vuex'
-
 //Js部分尽量采用ES6语法，webpack babel插件会转义兼容
 export default {
   //组件私有数据（必须是function，而且要return对象类型）
   data () {
     return {
-      title: '组件标题',
+      title: '移动端首页',
       firstName: '',
       lastName: '',
     }
@@ -39,11 +32,7 @@ export default {
   computed: {
     fullName () {
       return this.firstName + this.lastName
-    },
-    // ...mapGetters([
-    //   'play'
-    // ])
-  },
+    }
   },
   //监听
   watch: {
@@ -53,7 +42,6 @@ export default {
   },
   //函数集，自己封装，便于开发使用
   methods: {
-    ...mapMutations(['setPlay']),
     getCurrentDate () {
       return new Date().toLocaleDateString()
     }
