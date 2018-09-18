@@ -1,14 +1,13 @@
 { 
   "noEscape": true,
-  "name": "test-minimal",
-  "description": "Testing the minimal template setup",
+  "name": "test",
+  "description": "A Vue.js project",
   "author": "CircleCI",
   "build": "standalone",
   "router": false,
-  "lint": false,
-  "lintConfig": "standard",
-  "unit": false,
-  "runner": "jest",
-  "e2e": false,
-  "autoInstall": false
+  "lint": true,
+  "lintConfig": "airbnb",
+  "autoInstall": false,
+  "projectType":"mobile",
+  "vuex":true
 }

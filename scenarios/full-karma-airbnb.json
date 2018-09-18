@@ -7,8 +7,7 @@
   "router": false,
   "lint": true,
   "lintConfig": "airbnb",
-  "unit": true,
-  "runner": "karma",
-  "e2e": true,
-  "autoInstall": false
+  "autoInstall": false,
+  "projectType":"mobile",
+  "vuex":true
 }

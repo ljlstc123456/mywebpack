@@ -3,12 +3,11 @@
   "name": "test",
   "description": "A Vue.js project",
   "author": "CircleCI",
-  "build": "runtime",
+  "build": "standalone",
   "router": false,
   "lint": true,
-  "lintConfig": "standard",
-  "unit": true,
-  "runner": "jest",
-  "e2e": true,
-  "autoInstall": false
+  "lintConfig": "airbnb",
+  "autoInstall": false,
+  "projectType":"mobile",
+  "vuex":true
 }
