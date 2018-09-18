@@ -1,6 +1,6 @@
 # my-vue-webpack-template
 基于vue-cli template修改，去掉单元测试和e2e测试，增加vuex的选择，默认添加axios
-支持pc和mobile的选择
+支持PC和mobile的选择,如果选择PC,默认下载element-ui
 
 ## 生成项目
 ``` bash
