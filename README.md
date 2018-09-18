@@ -11,7 +11,7 @@ $ npm install
 $ npm run dev
 ```
 
-## 配置文件在根目录下configApi.js,可以配置api地址和经验文件router
+## 配置文件在根目录下configApi.js,可以配置api地址和静态文件router
 
 ``` bash
  //开发服务
