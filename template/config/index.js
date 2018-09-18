@@ -3,13 +3,14 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-
+const config = require('../configApi.js')
+let HOST = process.argv.splice(2)[0] || 'production';
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: config['dev'].router,
     proxyTable: {},
 
     // Various Dev Server settings
@@ -51,7 +52,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: config[HOST]?config[HOST].router:"/",
 
     /**
      * Source Maps

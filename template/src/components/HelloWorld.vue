@@ -44,7 +44,6 @@ export default {
     //   'play'
     // ])
   },
-  },
   //监听
   watch: {
     title (preVal, newVal) {
@@ -53,7 +52,7 @@ export default {
   },
   //函数集，自己封装，便于开发使用
   methods: {
-    ...mapMutations(['setPlay']),
+    //...mapMutations(['setPlay']),
     getCurrentDate () {
       return new Date().toLocaleDateString()
     }

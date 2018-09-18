@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <img :src="url">
     {{#router}}
     <router-view/>
     {{else}}
@@ -15,6 +16,11 @@ import HelloWorld from './components/HelloWorld'
 
 {{/unless}}
 export default {
+  data () {
+    return {
+      url: require("../static/imgs/test.png")
+    }
+  },
   name: 'App'{{#router}}{{else}},
   components: {
     HelloWorld

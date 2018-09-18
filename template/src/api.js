@@ -13,7 +13,7 @@ import router from './router'
 
 axios.defaults.withCredentials = true ;
 const instance = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.baseURL,
   timeout: 8000,
   headers: { "content-type": "application/json;charset=utf-8" }
 });
