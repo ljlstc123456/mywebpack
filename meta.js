@@ -145,8 +145,8 @@ module.exports = {
     },
   },
   vuex: {
-    "type": "confirm",
-    "message": "Install vuex?"
+    type: "confirm",
+    message: "Install vuex?"
   },
   filters: {
     '.eslintrc.js': 'lint',
