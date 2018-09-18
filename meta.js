@@ -104,8 +104,7 @@ module.exports = {
     autoInstall: {
       when: 'isNotTest',
       type: 'list',
-      message:
-        'Should we run `npm install` for you after the project has been created? (recommended)',
+      message:'Should we run `npm install` for you after the project has been created? (recommended)',
       choices: [
         {
           name: 'Yes, use NPM',
@@ -128,8 +127,7 @@ module.exports = {
   projectType: {
       when: 'isNotTest',
       type: 'list',
-      message:
-        'choices project type',
+      message:'choices project type',
       choices: [
         {
           name: 'Yes, use PC',
@@ -153,9 +151,9 @@ module.exports = {
     '.eslintignore': 'lint',
     'src/router/**/*': 'router',
     'src/store/**/*': 'vuex',
-    'src/pages/index.vue': "projectType == 'mobile'",
-    'src/pages/layout.vue': "projectType == 'PC'",
-    'src/pages/login.vue': "projectType == 'PC'"
+    'src/pages/index.vue': "projectType === 'mobile'",
+    'src/pages/layout.vue': "projectType === 'PC'",
+    'src/pages/login.vue': "projectType === 'PC'"
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
