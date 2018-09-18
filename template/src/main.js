@@ -9,14 +9,14 @@ import router from './router'
 {{/router}}
 
 import api from './api'
-
+import store from './store'
 // PC版本使用element
 {{#if_eq projectType "PC"}}
 import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 {{/if_eq}}
 
-import store from './store'
-
+import "../static/style.less";
 Vue.config.productionTip = false
 
 // 移动端设置 rem
@@ -25,6 +25,10 @@ document.documentElement.style.fontSize = '14px';
 if ('addEventListener' in document) {
     document.addEventListener("touchstart", function() {},false);
 }
+{{/if_eq}}
+
+{{#if_eq projectType "PC"}}
+Vue.use(ElementUI);
 {{/if_eq}}
 
 
