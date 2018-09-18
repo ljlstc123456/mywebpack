@@ -144,7 +144,7 @@ module.exports = {
       ],
     },
   },
-  "vuex":{
+  vuex: {
     "type": "confirm",
     "message": "Install vuex?"
   },
