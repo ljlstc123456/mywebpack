@@ -1,21 +1,31 @@
-# {{ name }}
 
-> {{ description }}
-
-## Build Setup
+## 配置文件在根目录下configApi.js,可以配置api地址和静态文件router
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
+ //开发服务
+ 'dev':{
+  	baseURL:'http://dev.api',
+  	router:'/'
+  },
+  //测试
+  'qa':{
+  	baseURL:'http://qa.api',
+  	router:'/'
+  },
+  //生产
+  'production':{
+  	baseURL:'/api',
+  	router:'/'
+  }
+```
+## 本地开发
+``` bash
 npm run dev
+```
+## 发布编译
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+``` bash
+npm run build -- dev //开发环境
+npm run build -- qa  //测试环境
+npm run build -- production //生产环境
+```
