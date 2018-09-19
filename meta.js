@@ -147,7 +147,8 @@ module.exports = {
         'src/store/**/*': 'vuex',
         'src/pages/index.vue': "projectType === 'mobile'",
         'src/pages/layout.vue': "projectType === 'PC'",
-        'src/pages/login.vue': "projectType === 'PC'"
+        'src/pages/login.vue': "projectType === 'PC'",
+        'src/pages/manager/**/*': "projectType === 'PC'"
     },
     complete: function(data, { chalk }) {
         const green = chalk.green

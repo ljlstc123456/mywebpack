@@ -9,7 +9,7 @@ export default {
   //组件私有数据（必须是function，而且要return对象类型）
   data () {
     return {
-      title: '移动端首页',
+      title: '组件标题',
       firstName: '',
       lastName: '',
     }
