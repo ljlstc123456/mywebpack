@@ -59,12 +59,7 @@ module.exports = {
                     name: 'Runtime + Compiler: recommended for most users',
                     value: 'standalone',
                     short: 'standalone',
-                },
-                {
-                    name: 'Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere',
-                    value: 'runtime',
-                    short: 'runtime',
-                },
+                }
             ],
         },
         router: {
@@ -145,6 +140,8 @@ module.exports = {
         '.eslintignore': 'lint',
         'src/router/**/*': 'router',
         'src/store/**/*': 'vuex',
+        'src/commponents/loading/**/*': "projectType === 'mobile'",
+        'src/commponents/toast/**/*': "projectType === 'mobile'",
         'src/pages/index.vue': "projectType === 'mobile'",
         'src/pages/layout.vue': "projectType === 'PC'",
         'src/pages/login.vue': "projectType === 'PC'",
