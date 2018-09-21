@@ -34,7 +34,6 @@ if ('addEventListener' in document) {
 
 Vue.prototype.$toast = toast;
 Vue.prototype.$loading = loading;
-
 {{/if_eq}}
 
 {{#if_eq projectType "PC"}}
