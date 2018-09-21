@@ -10,6 +10,12 @@ import router from './router'
 
 import api from './api'
 import store from './store'
+
+{{#if_eq projectType "mobile"}}
+import toast from "./components/toast"
+import loading from "./components/loading";
+{{/if_eq}}
+
 // PC版本使用element
 {{#if_eq projectType "PC"}}
 import ElementUI from 'element-ui'
@@ -25,6 +31,10 @@ document.documentElement.style.fontSize = '14px';
 if ('addEventListener' in document) {
     document.addEventListener("touchstart", function() {},false);
 }
+
+Vue.prototype.$toast = toast;
+Vue.prototype.$loading = loading;
+
 {{/if_eq}}
 
 {{#if_eq projectType "PC"}}
