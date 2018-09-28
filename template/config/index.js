@@ -4,7 +4,7 @@
 
 const path = require('path')
 const config = require('../configApi.js')
-let HOST = process.argv.splice(2)[0] || 'production';
+let HOST = JSON.parse(process.env.npm_config_argv).remain[0] || 'production';
 module.exports = {
   dev: {
 
