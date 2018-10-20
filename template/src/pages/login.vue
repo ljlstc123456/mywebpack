@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../../static/img/bg.jpg');
+    background-image: url('~stc/imgs/test.png');
     background-size: cover;
   }
   .cover{
