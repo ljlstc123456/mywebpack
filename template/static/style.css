@@ -23,5 +23,3 @@ ins,a,a:link,a:visited,a:hover,a:active{text-decoration:none;}
 .clearFix:after { display: table; content: ""; }
 .clearFix:after { clear: both; }
 .clearFix { *zoom: 1; }
-
-@primary: #4a8cff;

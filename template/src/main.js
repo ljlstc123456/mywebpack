@@ -21,8 +21,7 @@ import loading from "./components/loading";
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 {{/if_eq}}
-
-import "../static/style.less";
+import "../static/style.css";
 Vue.config.productionTip = false
 
 // 移动端设置 rem
