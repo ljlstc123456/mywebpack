@@ -39,5 +39,5 @@ npm run dev
 ``` bash
 npm run build -- dev //开发环境
 npm run build -- qa  //测试环境
-npm run build -- production //生产环境 
+npm run build -- production //生产环境
 ```
