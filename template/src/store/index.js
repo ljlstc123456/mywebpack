@@ -3,8 +3,11 @@ import Vuex from 'vuex';
 import getters from './getters';
 import mutations from './mutations';
 import actions from './action';
+import modules1 from './modules/modules1'
+
 
 Vue.use(Vuex);
+
 
 const state = {
 	play:true
@@ -14,5 +17,8 @@ export default new Vuex.Store({
 	state,
 	getters,
 	mutations,
-	actions
+	actions,
+	modules:{
+		modules1
+	}
 })
